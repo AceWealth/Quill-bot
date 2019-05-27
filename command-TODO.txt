@@ -8,4 +8,6 @@
 8. Fetch a random poem using https://www.programmableweb.com/api/poemist
 9. Silly writing prompt via https://www.ineedaprompt.com/
 10. Retrieve a random artwork from the artsy api with https://api.artsy.net/api/artworks?sample. Include warning for posissble suggestive content due to random nature. 
+11. A translation feature? 
+
 
