@@ -13,6 +13,7 @@ const sillyPrompt = require('./commands/sillyprompt.js');
 const rhymes= require('./commands/rhymes.js');
 const randomPoem = require('./commands/randomPoem.js');
 const definition = require('./commands/dictionary.js');
+const thesaurus = require('./commands/thesaurus.js');
 
 ///bot start
 client.on('ready', () => {
@@ -42,6 +43,10 @@ client.on("message", (message) => {
     //retrieve definition(s) of searched word via https://dictionaryapi.com
     if (message.content.startsWith(prefix + "definition")) {
         definition.get(message);
+    }
+    //retrieve synonym(s) of searched word via https://dictionaryapi.com
+    if (message.content.startsWith(prefix + "synonym")) {
+        thesaurus.get(message);
     }
 
 });
