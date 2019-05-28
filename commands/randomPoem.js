@@ -10,7 +10,7 @@ const randomPoem = function(message) {
             let resultArray = [random["content"], "*" + random["title"] + "* by " + "**" + random["poet"].name + "**"];
             message.channel.send(resultArray.join(" \n"));
         } catch (error) {
-            message.channel.send(errorMsg.randomPoemError);
+            message.channel.send(errorMsg.genericError);
         }
     })();
 }

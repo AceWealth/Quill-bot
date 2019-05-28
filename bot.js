@@ -9,6 +9,7 @@ const {
 //local scripts
 const config = require("./config.json");
 const errorMsg = require('./error-messages.js');
+const sillyPrompt = require('./commands/sillyprompt.js');
 const rhymes= require('./commands/rhymes.js');
 const randomPoem = require('./commands/randomPoem.js');
 
@@ -28,10 +29,13 @@ client.on("message", (message) => {
     if (message.content.startsWith(prefix + "random poem")) {
        randomPoem.get(message);
     }
-    //command to find 10 words that rhyme with the search query. 
+    //command to find words that rhyme with the search query. 
     //Results are grabbed from Datamuse API.
     if (message.content.startsWith(prefix + "rhymes")) {
         rhymes.get(message);
+    }
+    if (message.content.startsWith(prefix + "silly prompt")) {
+        sillyPrompt.get(message);
     }
 
 });
