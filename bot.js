@@ -8,12 +8,12 @@ const {
 
 //local scripts
 const config = require("./config.json");
-const errorMsg = require('./error-messages.js');
 const sillyPrompt = require('./commands/sillyprompt.js');
 const rhymes= require('./commands/rhymes.js');
 const randomPoem = require('./commands/randomPoem.js');
 const definition = require('./commands/dictionary.js');
 const thesaurus = require('./commands/thesaurus.js');
+const urban = require('./commands/urban.js');
 
 ///bot start
 client.on('ready', () => {
@@ -47,6 +47,10 @@ client.on("message", (message) => {
     //retrieve synonym(s) of searched word via https://dictionaryapi.com
     if (message.content.startsWith(prefix + "synonym")) {
         thesaurus.get(message);
+    }
+      //retrieve urban dictionary definition of search term
+      if (message.content.startsWith(prefix + "urban")) {
+        urban.get(message);
     }
 
 });
