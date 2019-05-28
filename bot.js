@@ -12,6 +12,7 @@ const errorMsg = require('./error-messages.js');
 const sillyPrompt = require('./commands/sillyprompt.js');
 const rhymes= require('./commands/rhymes.js');
 const randomPoem = require('./commands/randomPoem.js');
+const definition = require('./commands/dictionary.js');
 
 ///bot start
 client.on('ready', () => {
@@ -34,8 +35,13 @@ client.on("message", (message) => {
     if (message.content.startsWith(prefix + "rhymes")) {
         rhymes.get(message);
     }
+    //retrieve a random silly writing prompt from https://www.ineedaprompt.com/
     if (message.content.startsWith(prefix + "silly prompt")) {
         sillyPrompt.get(message);
+    }
+    //retrieve definition(s) of searched word via https://dictionaryapi.com
+    if (message.content.startsWith(prefix + "definition")) {
+        definition.get(message);
     }
 
 });
