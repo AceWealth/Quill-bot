@@ -5,11 +5,12 @@ const {
     RichEmbed
 } = require("discord.js");
 //https://github.com/sindresorhus/got << Node http request library
-const got = require('got');
 
 //local scripts
 const config = require("./config.json");
 const errorMsg = require('./error-messages.js');
+const rhymes= require('./commands/rhymes.js');
+const randomPoem = require('./commands/randomPoem.js');
 
 ///bot start
 client.on('ready', () => {
@@ -25,19 +26,14 @@ client.on("message", (message) => {
 
     //command to pull up a random poem from www.poemist.com API. 
     if (message.content.startsWith(prefix + "random poem")) {
-        (async () => {
-            try {
-                const response = await got('https://www.poemist.com/api/v1/randompoems');
-                let result = (JSON.parse(response.body));
-                let random = result[Math.floor(Math.random() * result.length)];
-                let resultArray = [random["content"], "*" + random["title"] + "* by " + "**" + random["poet"].name + "**"];
-                message.channel.send(resultArray.join(" \n"));
-                message.channel.send(errorMsg.randomPoemError);
-            } catch (error) {
-                message.channel.send(errorMsg.randomPoemError);
-            }
-        })();
+       randomPoem.get(message);
     }
+    //command to find 10 words that rhyme with the search query. 
+    //Results are grabbed from Datamuse API.
+    if (message.content.startsWith(prefix + "rhymes")) {
+        rhymes.get(message);
+    }
+
 });
 
 
