@@ -14,6 +14,7 @@ const randomPoem = require('./commands/randomPoem.js');
 const definition = require('./commands/dictionary.js');
 const thesaurus = require('./commands/thesaurus.js');
 const urban = require('./commands/urban.js');
+const redditPrompt = require('./commands/redditPrompt.js');
 
 ///bot start
 client.on('ready', () => {
@@ -21,7 +22,7 @@ client.on('ready', () => {
 });
 
 client.on('error', console.error);
-const prefix = "!";
+const prefix = "?";
 
 client.on("message", (message) => {
     if (!message.content.startsWith(prefix)) return;
@@ -51,6 +52,10 @@ client.on("message", (message) => {
       //retrieve urban dictionary definition of search term
       if (message.content.startsWith(prefix + "urban")) {
         urban.get(message);
+    }
+       //retrieve a random writing prompt from r/writingPrompts
+       if (message.content.startsWith(prefix + "reddit prompt")) {
+        redditPrompt.get(message);
     }
 
 });
