@@ -1,9 +1,7 @@
 const errorMsg = require('../error-messages.js');
 const got = require('got');
 const utility = require('../utility.js');
-const {
-    RichEmbed
-} = require("discord.js");
+
 
 const rhymes = function (message) {
     let searchTerm = utility.getSearch(message);

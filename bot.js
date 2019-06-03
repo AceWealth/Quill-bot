@@ -18,6 +18,7 @@ const definition = require('./commands/dictionary.js');
 const thesaurus = require('./commands/thesaurus.js');
 const urban = require('./commands/urban.js');
 const redditPrompt = require('./commands/redditPrompt.js');
+const help = require('./commands/help.js')
 
 
 ///bot start
@@ -32,6 +33,11 @@ client.on("message", (message) => {
     if (!message.content.startsWith(prefix)) return;
     // Exit and stop if prefix is not there
 
+    //sends help list for commands. 
+    if (message.content.startsWith(prefix + "help") ||
+        message.content.startsWith(prefix + "commands")) {
+        help.help(message);
+    }
     //command to pull up a random poem from www.poemist.com API. 
     if (message.content.startsWith(prefix + "random poem")) {
         randomPoem.get(message);
@@ -65,16 +71,12 @@ client.on("message", (message) => {
     if (message.content.startsWith(prefix + "gen archetype")) {
         message.channel.send(generate.basic());
     }
-    //generate a random character appearance profile
-    if (message.content.startsWith(prefix + "gen appearance")) {
-        message.channel.send(generate.appearance());
-    }
     //generate a random character attribute profile
     if (message.content.startsWith(prefix + "gen character")) {
         message.channel.send(generate.complex());
     }
 
- 
+
 });
 
 
