@@ -9,7 +9,7 @@ const {
 //CHANGE TO NPM PACKAGE WHEN PUBLISHED
 const generate = require('/Users/cailey/.nvm/versions/node/v10.13.0/lib/node_modules/character-gen');
 
-//local scripts
+//command scripts
 const config = require("./config.json");
 const sillyPrompt = require('./commands/sillyprompt.js');
 const rhymes = require('./commands/rhymes.js');
@@ -18,8 +18,8 @@ const definition = require('./commands/dictionary.js');
 const thesaurus = require('./commands/thesaurus.js');
 const urban = require('./commands/urban.js');
 const redditPrompt = require('./commands/redditPrompt.js');
-const help = require('./commands/help.js')
-
+const help = require('./commands/help.js');
+const nameGen = require('./commands/nameGen.js');
 
 ///bot start
 client.on('ready', () => {
@@ -74,6 +74,10 @@ client.on("message", (message) => {
     //generate a random character attribute profile
     if (message.content.startsWith(prefix + "gen character")) {
         message.channel.send(generate.complex());
+    }
+      //generate a random modern name via https://uinames.com/ api
+      if (message.content.startsWith(prefix + "name")) {
+        nameGen.get(message)
     }
 
 
