@@ -19,7 +19,7 @@ const thesaurus = require('./commands/thesaurus.js');
 const urban = require('./commands/urban.js');
 const redditPrompt = require('./commands/redditPrompt.js');
 const help = require('./commands/help.js');
-const nameGen = require('./commands/nameGen.js');
+const characterGen = require('./commands/character.js');
 
 ///bot start
 client.on('ready', () => {
@@ -73,14 +73,12 @@ client.on("message", (message) => {
     }
     //generate a random character attribute profile
     if (message.content.startsWith(prefix + "gen character")) {
-        message.channel.send(generate.complex());
+        message.channel.send(characterGen.character(message));
     }
       //generate a random modern name via https://uinames.com/ api
       if (message.content.startsWith(prefix + "name")) {
-        nameGen.get(message)
+        characterGen.name(message)
     }
-
-
 });
 
 
