@@ -2,7 +2,8 @@ const errorMsg = require('../error-messages.js');
 const got = require('got');
 const utility = require('../utility.js');
 //change to npm when published
-const generate = require('/Users/cailey/.nvm/versions/node/v10.13.0/lib/node_modules/character-gen');
+const generate = require('character-gen');
+
 
 const nameGen = function (message) {
     let urls = ['https://uinames.com/api/?region=united%20states', 'https://uinames.com/api/?gender=female&region=united%20states', 'https://uinames.com/api/?gender=male&region=united%20states']
@@ -29,7 +30,6 @@ const nameGen = function (message) {
     })();
 }
 
-//
 const NameAndCharacter = function (message, test) {
     let name = '';
     (async () => {

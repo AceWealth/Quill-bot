@@ -6,8 +6,7 @@ const {
 } = require("discord.js");
 //https://github.com/sindresorhus/got << Node http request library
 
-//CHANGE TO NPM PACKAGE WHEN PUBLISHED
-const generate = require('/Users/cailey/.nvm/versions/node/v10.13.0/lib/node_modules/character-gen');
+const generate = require('character-gen');
 
 //command scripts
 const config = require("./config.json");
