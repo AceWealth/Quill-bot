@@ -75,7 +75,7 @@ client.on("message", (message) => {
         message.channel.send(characterGen.character(message));
     }
       //generate a random modern name via https://uinames.com/ api
-      if (message.content.startsWith(prefix + "name")) {
+      if (message.content.startsWith(prefix + "gen name")) {
         characterGen.name(message)
     }
 });

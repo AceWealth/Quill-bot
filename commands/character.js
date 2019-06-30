@@ -1,7 +1,6 @@
 const errorMsg = require('../error-messages.js');
 const got = require('got');
 const utility = require('../utility.js');
-//change to npm when published
 const generate = require('character-gen');
 
 
@@ -11,9 +10,9 @@ const nameGen = function (message) {
     console.log(search)
     let url = '';
     //set request URL according to search term: male, female, or none.
-    if (search.toLowerCase() === 'female') {
+    if (search.toLowerCase() === 'name female') {
         url = urls[1];
-    } else if (search.toLowerCase() === 'male') {
+    } else if (search.toLowerCase() === 'name male') {
         url = urls[2];
     } else {
         url = urls[0];
