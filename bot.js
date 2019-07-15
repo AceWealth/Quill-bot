@@ -10,7 +10,6 @@ const generate = require('character-gen');
 
 
 //command scripts
-const config = require("./config.json");
 const sillyPrompt = require('./commands/sillyprompt.js');
 const rhymes = require('./commands/rhymes.js');
 const randomPoem = require('./commands/randomPoem.js');

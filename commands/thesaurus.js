@@ -1,17 +1,12 @@
 const errorMsg = require('../error-messages.js');
 const got = require('got');
 const utility = require('../utility.js');
-const config = require("../config.json");
-const aws = require('aws-sdk');
-let s3 = new aws.S3({
-    thesaurus: process.env.THESAURUS
-});
 
 const thesaurus = function (message) {
     let searchTerm = utility.getSearch(message);
     (async () => {
         try {
-            const response = await got('https://www.dictionaryapi.com/api/v3/references/thesaurus/json/' + searchTerm + '?key=' + s3.thesaurus);
+            const response = await got('https://www.dictionaryapi.com/api/v3/references/thesaurus/json/' + searchTerm + '?key=' + process.env.THESAURUS);
             let result = (JSON.parse(response.body));
             let syns = result[0]["meta"]["syns"];
             //flatten nested arrays
