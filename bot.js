@@ -7,10 +7,7 @@ const {
 //https://github.com/sindresorhus/got << Node http request library
 
 const generate = require('character-gen');
-const aws = require('aws-sdk');
-let s3 = new aws.S3({
-  token: process.env.BOT_TOKEN
-});
+
 
 //command scripts
 const config = require("./config.json");
