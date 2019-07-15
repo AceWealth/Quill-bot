@@ -7,6 +7,12 @@ const {
 //https://github.com/sindresorhus/got << Node http request library
 
 const generate = require('character-gen');
+const aws = require('aws-sdk');
+
+let s3 = new aws.S3({
+  accessKeyId: process.env.S3_KEY,
+  secretAccessKey: process.env.S3_SECRET
+});
 
 //command scripts
 const config = require("./config.json");

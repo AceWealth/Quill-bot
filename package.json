@@ -1,0 +1,22 @@
+{
+  "name": "creativity-bot",
+  "version": "1.0.0",
+  "engines": {
+    "node": "10.3.0"
+  },
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "description": "A node.js discord bot dedicated to helping artists, writers, and roleplayers create.  Sample commands include random character attribute generation, writing prompts, rhyme search, and more!",
+  "main": "bot.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmarmil/creativity-bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cmarmil/creativity-bot/issues"
+  },
+  "homepage": "https://github.com/cmarmil/creativity-bot#readme"
+}
