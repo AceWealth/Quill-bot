@@ -2,12 +2,16 @@ const errorMsg = require('../error-messages.js');
 const got = require('got');
 const utility = require('../utility.js');
 const config = require("../config.json");
+const aws = require('aws-sdk');
+let s3 = new aws.S3({
+    dictionary: process.env.DICTIONARY
+});
 
 const dictionary = function(message) {
     let searchTerm = utility.getSearch(message);
     (async () => {
         try {
-            const response = await got('https://www.dictionaryapi.com/api/v3/references/collegiate/json/' + searchTerm +'?key='+ config.dictionary);
+            const response = await got('https://www.dictionaryapi.com/api/v3/references/collegiate/json/' + searchTerm +'?key='+ s3.dictionary);
             let result = (JSON.parse(response.body));
             definitions = result[0]["shortdef"];
             //add definition number and quotation marks to make definitions more readable
