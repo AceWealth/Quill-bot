@@ -7,7 +7,7 @@ Sample commands include random character attribute generation, writing prompts, 
 Add Quill to your discord server and see a list of all current commands via it's official website http://getquill.info/ 
 
 <h1>Self-Hosting:</h1>
-You are welcome to host a copy of the bot yourself, but you will need to add 3 special keys to the code. You will also need to have node.js, a working knowledge of node.js, and its CLI commands if hosting locally. 
+You are welcome to host a copy of the bot yourself, but you will need to add 3 special keys to the code. You will also need to have node.js installed, and a working knowledge of node.js with its CLI commands if hosting locally. 
 
 1. A discord bot application and bot token from [https://discordapp.com/developers/applications/](https://discordapp.com/developers/applications/). See [https://discordapp.com/developers/docs/intro](https://discordapp.com/developers/docs/intro) for more setup instructions. 
 2. A dictionary API key from [https://www.dictionaryapi.com/](https://www.dictionaryapi.com/).
