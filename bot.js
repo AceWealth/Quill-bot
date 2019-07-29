@@ -8,7 +8,6 @@ const {
 
 const generate = require('character-gen');
 
-
 //command scripts
 const sillyPrompt = require('./commands/sillyprompt.js');
 const rhymes = require('./commands/rhymes.js');
@@ -38,7 +37,7 @@ client.on("message", (message) => {
         help.help(message);
     }
     //command to pull up a random poem from www.poemist.com API. 
-    if (message.content.startsWith(prefix + "random poem")) {
+    if (message.content.startsWith(prefix + "poem")) {
         randomPoem.get(message);
     }
     //command to find words that rhyme with the search query. 
